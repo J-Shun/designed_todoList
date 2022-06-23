@@ -47,10 +47,21 @@
   box-shadow: 0 0 15px rgba(0 0 0 / 0.15);
 }
 
-.list li {
+li {
   border-bottom: 1px solid $secondary-color;
   padding-bottom: $base-number;
   margin-bottom: $base-number;
+}
+
+li img {
+  display: none;
+  @include phone {
+    display: block;
+  }
+}
+
+li:hover img {
+  display: block;
 }
 
 input[type="checkbox"] {
@@ -58,10 +69,7 @@ input[type="checkbox"] {
   height: 20px;
 }
 
-.del-btn {
-  right: -32px;
-  @include phone {
-    right: 0;
-    margin-left: auto;
-  }
+.finish {
+  text-decoration: line-through 2px $secondary-color;
+  color: $secondary-color;
 }

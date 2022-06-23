@@ -285,6 +285,10 @@ button {
   margin-bottom: 40px;
 }
 
+.ml-a {
+  margin-left: auto;
+}
+
 .mr-3 {
   margin-right: 16px;
 }
@@ -354,10 +358,23 @@ button {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 
-.list li {
+li {
   border-bottom: 1px solid #9f9a91;
   padding-bottom: 16px;
   margin-bottom: 16px;
+}
+
+li img {
+  display: none;
+}
+@media (max-width: 576px) {
+  li img {
+    display: block;
+  }
+}
+
+li:hover img {
+  display: block;
 }
 
 input[type=checkbox] {
@@ -365,12 +382,8 @@ input[type=checkbox] {
   height: 20px;
 }
 
-.del-btn {
-  right: -32px;
-}
-@media (max-width: 576px) {
-  .del-btn {
-    right: 0;
-    margin-left: auto;
-  }
+.finish {
+  -webkit-text-decoration: line-through 2px #9f9a91;
+          text-decoration: line-through 2px #9f9a91;
+  color: #9f9a91;
 }/*# sourceMappingURL=all.css.map */
