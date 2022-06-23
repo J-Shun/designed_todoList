@@ -1,0 +1,376 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button {
+  padding: 0;
+  border: none;
+}
+
+.df {
+  display: flex;
+}
+
+@media (max-width: 576px) {
+  .dn-phone {
+    display: none;
+  }
+}
+
+.jcc {
+  justify-content: center;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.aic {
+  align-items: center;
+}
+
+.flex-1 {
+  flex-grow: 1;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+@media (max-width: 576px) {
+  .position-relative-phone {
+    position: relative;
+  }
+}
+
+.position-y-center {
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.vh-100 {
+  height: 100vh;
+}
+
+.fz-sm {
+  font-size: 14px;
+}
+
+@media (max-width: 576px) {
+  .fz-sm-phone {
+    font-size: 14px;
+  }
+}
+
+.fz-l {
+  font-size: 24px;
+}
+
+.fw-b {
+  font-weight: bold;
+}
+
+.text-decoration-none {
+  text-decoration: none;
+}
+
+.primary-color {
+  color: #333;
+}
+
+.secondary-color {
+  color: #9f9a91;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.pt-3 {
+  padding-top: 16px;
+}
+
+.pl-3 {
+  padding-left: 16px;
+}
+
+.pr-3 {
+  padding-right: 16px;
+}
+
+.pr-9 {
+  padding-right: 48px;
+}
+
+.px-4 {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.py-3 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+@media (max-width: 576px) {
+  .pr-3-phone {
+    padding-right: 16px;
+  }
+}
+
+.mb-3 {
+  margin-bottom: 16px;
+}
+
+.mb-4 {
+  margin-bottom: 20px;
+}
+
+.mb-5 {
+  margin-bottom: 24px;
+}
+
+.mb-7 {
+  margin-bottom: 32px;
+}
+
+.mb-8 {
+  margin-bottom: 40px;
+}
+
+.mr-3 {
+  margin-right: 16px;
+}
+
+.mr-5 {
+  margin-right: 24px;
+}
+
+.over-flow-hidden {
+  overflow: hidden;
+}
+
+.border-none {
+  border: none;
+}
+
+.background-white {
+  background-color: #fff;
+}
+
+.logo {
+  background-image: url(/image/check.svg);
+  background-repeat: no-repeat;
+  background-position: 5px 0;
+  margin-right: 4px;
+}
+
+.todo-container {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 576px) {
+  .todo-container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+.background-gradient {
+  background: linear-gradient(174deg, #ffd370 55%, #ffffff 45%);
+}
+
+.add-btn {
+  width: 40px;
+  height: 40px;
+  right: 4px;
+}
+
+.border-radius {
+  border-radius: 10px;
+}
+
+.enter {
+  height: 47px;
+}
+
+.select {
+  border-bottom: 2px solid #9f9a91;
+}
+.select.active, .select:hover {
+  font-weight: bold;
+  border-color: #333;
+}
+
+.shadow {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.list li {
+  border-bottom: 1px solid #9f9a91;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+}
+
+.del-btn {
+  right: -32px;
+}
+@media (max-width: 576px) {
+  .del-btn {
+    right: 0;
+    margin-left: auto;
+  }
+}/*# sourceMappingURL=all.css.map */

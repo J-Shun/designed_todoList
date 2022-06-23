@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/all.css" />
+    <title>Designed-Todo-List</title>
+  </head>
+  <body>
+    <main class="wrap vh-100 background-gradient">
+      <header class="df aic jcsb px-4 pt-3 mb-8">
+        <a href="#" class="df aic text-decoration-none primary-color">
+          <img src="/image/outer.svg" class="logo" />
+          <span class="fz-l fw-b"> ONLINE TODO LIST </span>
+        </a>
+        <div>
+          <span class="fw-b mr-5 dn-phone">Shun的待辦</span>
+          <a
+            href="#"
+            class="text-decoration-none primary-color ml-10 fz-sm-phone"
+            >登出</a
+          >
+        </div>
+      </header>
+
+      <section>
+        <div class="todo-container mb-4">
+          <div class="position-relative shadow">
+            <input
+              type="text"
+              class="w-100 secondary-color border-radius border-none pl-3 enter"
+              placeholder="新增待辦事項"
+            />
+            <img
+              src="/image/plus 1.svg"
+              class="add-btn border-radius position-absolute position-y-center cursor-pointer"
+            />
+          </div>
+        </div>
+
+        <div class="todo-container">
+          <div
+            class="border-radius background-white over-flow-hidden fz-sm shadow"
+          >
+            <div class="df mb-5">
+              <button
+                class="flex-1 fz-sm py-3 select background-white active cursor-pointer"
+              >
+                全部
+              </button>
+              <button
+                class="flex-1 fz-sm py-3 select background-white cursor-pointer"
+              >
+                待完成
+              </button>
+              <button
+                class="flex-1 fz-sm py-3 select background-white cursor-pointer"
+              >
+                已完成
+              </button>
+            </div>
+
+            <ul class="list pl-3 pr-3 pr-9 mb-5 fz-sm pr-3-phone">
+              <li class="df aic position-relative">
+                <input type="checkbox" class="mr-3" name="" id="" />
+                <span>做啥，我也不知道</span>
+                <img
+                  src="/image/x.svg"
+                  class="position-absolute position-relative-phone del-btn cursor-pointer"
+                />
+              </li>
+              <li class="df aic position-relative">
+                <input type="checkbox" class="mr-3" name="" id="" />
+                <span>做啥，我也不知道</span>
+                <img
+                  src="/image/x.svg"
+                  class="position-absolute position-relative-phone del-btn cursor-pointer"
+                />
+              </li>
+              <li class="df aic position-relative">
+                <input type="checkbox" class="mr-3" name="" id="" />
+                <span>做啥，我也不知道</span>
+                <img
+                  src="/image/x.svg"
+                  class="position-absolute position-relative-phone del-btn cursor-pointer"
+                />
+              </li>
+              <li class="df aic position-relative">
+                <input type="checkbox" class="mr-3" name="" id="" />
+                <span>做啥，我也不知道</span>
+                <img
+                  src="/image/x.svg"
+                  class="position-absolute position-relative-phone del-btn cursor-pointer"
+                />
+              </li>
+            </ul>
+            <div class="df jcsb pl-3 pr-9 pr-3-sm mb-7">
+              <span>X個待完成項目</span>
+              <span class="secondary-color cursor-pointer">清除以完成項目</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+.logo {
+  background-image: url(/image/check.svg);
+  background-repeat: no-repeat;
+  background-position: 5px 0;
+  margin-right: 4px;
+}
+
+.todo-container {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  @include phone {
+    padding-left: $base-number * 2;
+    padding-right: $base-number * 2;
+  }
+}
+
+.background-gradient {
+  background: linear-gradient(174deg, #ffd370 55%, #ffffff 45%);
+}
+
+.add-btn {
+  width: 40px;
+  height: 40px;
+  right: 4px;
+}
+
+.border-radius {
+  border-radius: 10px;
+}
+
+.enter {
+  height: 47px;
+}
+
+.select {
+  border-bottom: 2px solid $secondary-color;
+
+  &.active,
+  &:hover {
+    font-weight: bold;
+    border-color: $primary-color;
+  }
+}
+
+.shadow {
+  box-shadow: 0 0 15px rgba(0 0 0 / 0.15);
+}
+
+.list li {
+  border-bottom: 1px solid $secondary-color;
+  padding-bottom: $base-number;
+  margin-bottom: $base-number;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+
+.del-btn {
+  right: -32px;
+  @include phone {
+    right: 0;
+    margin-left: auto;
+  }
+}
