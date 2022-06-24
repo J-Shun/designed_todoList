@@ -309,6 +309,10 @@ button {
   background-color: #fff;
 }
 
+.hide {
+  display: none;
+}
+
 .logo {
   background-image: url(/image/check.svg);
   background-repeat: no-repeat;
@@ -329,7 +333,16 @@ button {
 }
 
 .background-gradient {
-  background: linear-gradient(174deg, #ffd370 55%, #ffffff 45%);
+  background: url(/image/empty.svg), linear-gradient(174deg, #ffd370 55%, #ffffff 45%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 240px 250px, 100%;
+}
+@media (max-width: 576px) {
+  .background-gradient {
+    background-image: none;
+    background-color: #ffd370;
+  }
 }
 
 .add-btn {
@@ -356,6 +369,18 @@ button {
 
 .shadow {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.list {
+  max-height: 400px;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+.list::-webkit-scrollbar {
+  display: none;
 }
 
 li {

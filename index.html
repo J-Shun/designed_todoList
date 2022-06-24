@@ -29,7 +29,7 @@
           <div class="position-relative shadow">
             <input
               type="text"
-              class="w-100 secondary-color border-radius border-none pl-3 enter"
+              class="add-content w-100 secondary-color border-radius border-none pl-3 enter"
               placeholder="新增待辦事項"
             />
             <img
@@ -61,41 +61,19 @@
               </button>
             </div>
 
-            <ul class="list pl-3 pr-3 mb-5 fz-sm pr-3-phone">
-              <li class="df aic position-relative">
-                <input type="checkbox" class="mr-3" name="" id="" />
-                <span>做啥，我也不知道</span>
-                <img src="/image/x.svg" class="ml-a cursor-pointer" />
-              </li>
-              <li class="df aic position-relative">
-                <input type="checkbox" class="mr-3" name="" id="" />
-                <span>做啥，我也不知道</span>
-                <img src="/image/x.svg" class="ml-a cursor-pointer" />
-              </li>
-              <li class="df aic position-relative">
-                <input type="checkbox" class="mr-3" name="" id="" />
-                <span>做啥，我也不知道</span>
-                <img src="/image/x.svg" class="ml-a cursor-pointer" />
-              </li>
-              <li class="df aic position-relative">
-                <input type="checkbox" class="mr-3" name="" id="" />
-                <span>做啥，我也不知道</span>
-                <img src="/image/x.svg" class="ml-a cursor-pointer" />
-              </li>
-              <li class="df aic position-relative">
-                <input type="checkbox" class="mr-3" name="" id="" />
-                <span>做啥，我也不知道</span>
-                <img src="/image/x.svg" class="ml-a cursor-pointer" />
-              </li>
-            </ul>
+            <ul class="list pl-3 pr-3 mb-5 fz-sm pr-3-phone"></ul>
+
             <div class="df jcsb pl-3 pr-9 pr-3-sm mb-7">
               <span>X個待完成項目</span>
-              <span class="secondary-color cursor-pointer">清除以完成項目</span>
+              <span class="clear-btn secondary-color cursor-pointer"
+                >清除以完成項目</span
+              >
             </div>
           </div>
         </div>
       </section>
     </main>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
