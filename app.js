@@ -1,67 +1,56 @@
 const url = "https://fathomless-brushlands-42339.herokuapp.com/todo3/";
-const todoList = document.querySelector(".list");
 const addContent = document.querySelector(".add-content");
 const addBtn = document.querySelector(".add-btn");
-const clearBtn = document.querySelector(".clear-btn");
+const list = document.querySelector(".list");
+const notFinished = document.querySelector(".quantity");
+
 let data = [];
 
 function init() {
-  axios.get(url).then((response) => {
-    data = response.data;
+  updateData().then(() => {
     render();
   });
 }
 
+function updateData() {
+  return axios.get(url).then((res) => {
+    data = res.data;
+  });
+}
+
 function render() {
-  let content = "";
-  data.forEach((item) => {
-    content += `<li class="df aic position-relative" data-id=${item.id}><input type="checkbox" class="mr-3" /><span>${item.content}</span><img src="/image/x.svg" class="ml-a cursor-pointer" /></li>`;
+  let allContent = "";
+  data.forEach((item, index) => {
+    allContent += `<li class="df aic position-relative"  data-index=${index} data-id="${item.id}"><label class="df aic"><input type="checkbox" class="hide" /><span class="check-mark position-relative border-radius-sm cursor-pointer"></span><span class="content pl-3">${item.content}</span></label><img src="/image/x.svg" class="delete-icon ml-a cursor-pointer" /></li>`;
   });
-  todoList.innerHTML = content;
+  list.innerHTML = allContent;
+  notFinished.textContent = `${data.length} 個待完成項目`;
 }
 
-function addTodoContent() {
+function addTodo(e) {
   if (addContent.value.length < 1) return;
-  const todoObj = {};
-  todoObj.content = addContent.value;
-  todoObj.completed = false;
+  const obj = {};
+  obj.content = addContent.value;
+  obj.status = "";
   addContent.value = "";
-  axios
-    .post("https://fathomless-brushlands-42339.herokuapp.com/todo3", todoObj)
-    .then(() => {
-      axios.get(url).then((response) => {
-        data = response.data;
-        render();
-      });
-    });
-}
-
-function deleteOneContent(e) {
-  if (e.target.nodeName !== "IMG") return;
-  const targetId = e.target.parentNode.getAttribute("data-id");
-  const target = data.filter((item) => item.id === parseInt(targetId));
-  console.log(target);
-  // axios.delete(url + target.id).then((response) => {
-  //   render();
-  // });
-}
-
-function deleteAllContent() {
-  const allIds = data.map((item) => item.id);
-  data = [];
-  render();
-  allIds.forEach((id) => {
-    axios.delete(url + id);
+  axios.post(url, obj).then((res) => {
+    init();
   });
 }
 
-addBtn.addEventListener("click", addTodoContent);
+addBtn.addEventListener("click", addTodo);
 addContent.addEventListener("keyup", (e) => {
   if (e.keyCode === 13) {
     addBtn.click();
   }
 });
-clearBtn.addEventListener("click", deleteAllContent);
-todoList.addEventListener("click", deleteOneContent);
+
+list.addEventListener("click", (e) => {
+  if (!e.target.classList.contains("delete-icon")) return;
+  const targetId = e.target.parentNode.getAttribute("data-id");
+  axios.delete(url + targetId).then((res) => {
+    init();
+  });
+});
 
 init();

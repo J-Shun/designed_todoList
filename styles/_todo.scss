@@ -33,6 +33,10 @@
   right: 4px;
 }
 
+.border-radius-sm {
+  border-radius: 5px;
+}
+
 .border-radius {
   border-radius: 10px;
 }
@@ -72,23 +76,49 @@ li {
   margin-bottom: $base-number;
 }
 
-li img {
+.delete-icon {
   display: none;
   @include phone {
     display: block;
   }
 }
 
-li:hover img {
+li:hover .delete-icon {
   display: block;
 }
 
-input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+input[type="checkbox"]:checked {
+  & ~ .check-mark {
+    border: none;
+    &::before {
+      transform: scale(1);
+    }
+  }
+
+  & ~ .content {
+    text-decoration: line-through 2px $secondary-color;
+    color: $secondary-color;
+  }
 }
 
-.finish {
-  text-decoration: line-through 2px $secondary-color;
-  color: $secondary-color;
+.check-mark {
+  width: 20px;
+  height: 20px;
+  border: 1px solid $secondary-color;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-image: url(/image/yellow-check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: scale(0);
+    transition: transform 0.3s;
+  }
+
+  &:hover {
+    border-color: $primary-color;
+  }
 }

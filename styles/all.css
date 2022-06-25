@@ -241,6 +241,10 @@ button {
   padding-left: 16px;
 }
 
+.pl-5 {
+  padding-left: 24px;
+}
+
 .pr-3 {
   padding-right: 16px;
 }
@@ -351,6 +355,10 @@ button {
   right: 4px;
 }
 
+.border-radius-sm {
+  border-radius: 5px;
+}
+
 .border-radius {
   border-radius: 10px;
 }
@@ -389,26 +397,47 @@ li {
   margin-bottom: 16px;
 }
 
-li img {
+.delete-icon {
   display: none;
 }
 @media (max-width: 576px) {
-  li img {
+  .delete-icon {
     display: block;
   }
 }
 
-li:hover img {
+li:hover .delete-icon {
   display: block;
 }
 
-input[type=checkbox] {
-  width: 20px;
-  height: 20px;
+input[type=checkbox]:checked ~ .check-mark {
+  border: none;
 }
-
-.finish {
+input[type=checkbox]:checked ~ .check-mark::before {
+  transform: scale(1);
+}
+input[type=checkbox]:checked ~ .content {
   -webkit-text-decoration: line-through 2px #9f9a91;
           text-decoration: line-through 2px #9f9a91;
   color: #9f9a91;
+}
+
+.check-mark {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #9f9a91;
+}
+.check-mark::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-image: url(/image/yellow-check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: scale(0);
+  transition: transform 0.3s;
+}
+.check-mark:hover {
+  border-color: #333;
 }/*# sourceMappingURL=all.css.map */
