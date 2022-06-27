@@ -1,5 +1,5 @@
 .logo {
-  background-image: url(/image/check.svg);
+  background-image: url(./image/check.svg);
   background-repeat: no-repeat;
   background-position: 5px 0;
   margin-right: 4px;
@@ -16,7 +16,7 @@
 }
 
 .background-gradient {
-  background: url(/image/empty.svg),
+  background: url(./image/empty.svg),
     linear-gradient(174deg, #ffd370 55%, #ffffff 45%);
   background-repeat: no-repeat;
   background-position: center;
@@ -115,7 +115,7 @@ input[type="checkbox"]:checked {
     position: absolute;
     width: 18px;
     height: 18px;
-    background-image: url(/image/yellow-check.svg);
+    background-image: url(./image/yellow-check.svg);
     background-repeat: no-repeat;
     background-position: center;
     transform: scale(0);
