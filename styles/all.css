@@ -447,24 +447,23 @@ input[type=checkbox]:checked ~ .content {
 }
 
 .loading {
-  display: flex;
-  align-items: center;
   position: fixed;
   right: 120px;
   bottom: 30px;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: #ffd370;
+  color: #ffd370;
   -webkit-animation: load 0.8s linear infinite;
           animation: load 0.8s linear infinite;
 }
 .loading::before {
-  content: "Loading";
+  content: "";
   position: absolute;
-  color: #ffd370;
-  left: 100%;
-  font-size: 20px;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: -15px;
+  background-color: #ffd370;
+  border-radius: 50%;
 }
 @media (max-width: 576px) {
   .loading::before {

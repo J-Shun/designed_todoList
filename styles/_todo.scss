@@ -128,22 +128,21 @@ input[type="checkbox"]:checked {
 }
 
 .loading {
-  display: flex;
-  align-items: center;
   position: fixed;
   right: 120px;
   bottom: 30px;
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  background-color: #ffd370;
+  color: #ffd370;
   animation: load 0.8s linear infinite;
   &::before {
-    content: "Loading";
+    content: "";
     position: absolute;
-    color: #ffd370;
-    left: 100%;
-    font-size: 20px;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -15px;
+    background-color: #ffd370;
+    border-radius: 50%;
     @include phone {
       color: #fff;
     }
