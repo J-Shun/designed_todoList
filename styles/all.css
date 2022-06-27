@@ -397,6 +397,10 @@ li {
   margin-bottom: 16px;
 }
 
+label {
+  width: 100%;
+}
+
 .delete-icon {
   display: none;
 }
@@ -442,6 +446,60 @@ input[type=checkbox]:checked ~ .content {
   border-color: #333;
 }
 
+.loading {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  right: 120px;
+  bottom: 30px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ffd370;
+  -webkit-animation: load 0.8s linear infinite;
+          animation: load 0.8s linear infinite;
+}
+.loading::before {
+  content: "Loading";
+  position: absolute;
+  color: #ffd370;
+  left: 100%;
+  font-size: 20px;
+}
+@media (max-width: 576px) {
+  .loading::before {
+    color: #fff;
+  }
+}
+@media (max-width: 576px) {
+  .loading {
+    background-color: #fff;
+  }
+}
+
+@-webkit-keyframes load {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes load {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 .no-event {
   pointer-events: none;
 }/*# sourceMappingURL=all.css.map */

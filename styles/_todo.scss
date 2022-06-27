@@ -76,6 +76,10 @@ li {
   margin-bottom: $base-number;
 }
 
+label {
+  width: 100%;
+}
+
 .delete-icon {
   display: none;
   @include phone {
@@ -120,6 +124,44 @@ input[type="checkbox"]:checked {
 
   &:hover {
     border-color: $primary-color;
+  }
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  right: 120px;
+  bottom: 30px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ffd370;
+  animation: load 0.8s linear infinite;
+  &::before {
+    content: "Loading";
+    position: absolute;
+    color: #ffd370;
+    left: 100%;
+    font-size: 20px;
+    @include phone {
+      color: #fff;
+    }
+  }
+  @include phone {
+    background-color: #fff;
+  }
+}
+
+@keyframes load {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 

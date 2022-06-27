@@ -7,6 +7,7 @@ const addBtn = document.querySelector(".add-btn");
 const clearBtn = document.querySelector(".clear-btn");
 const list = document.querySelector(".list");
 const quantity = document.querySelector(".quantity");
+const loading = document.querySelector(".loading");
 const unique = [];
 let position = 1;
 let data = [];
@@ -61,10 +62,15 @@ function render() {
       data.filter((item) => item.status === "").length
     } 個待完成項目`;
   }
+
+  loading.classList.add("hide");
 }
 
 function addTodo(e) {
   if (addContent.value.length < 1) return;
+
+  loading.classList.remove("hide");
+
   const obj = {};
   obj.content = addContent.value;
   obj.status = "";
@@ -83,6 +89,9 @@ function addTodo(e) {
 
 function deleteTodo(e) {
   if (!e.target.classList.contains("delete-icon")) return;
+
+  loading.classList.remove("hide");
+
   e.target.classList.add("no-event");
   const targetId = e.target.parentNode.getAttribute("data-id");
 
@@ -103,6 +112,9 @@ function deleteTodo(e) {
 
 function toggleStatus(e) {
   if (e.target.nodeName !== "INPUT") return;
+
+  loading.classList.remove("hide");
+
   const checkBox = e.target;
   const targetId = checkBox.parentNode.parentNode.getAttribute("data-id");
   const targetItem = data.filter((item) => item.id === parseInt(targetId))[0];
@@ -113,11 +125,13 @@ function toggleStatus(e) {
     axios.patch(url + targetId, { status: "checked" }).then((res) => {
       data[targetIndex].status = "checked";
       render();
+      loading.classList.add("hide");
     });
   } else {
     axios.patch(url + targetId, { status: "" }).then((res) => {
       data[targetIndex].status = "";
       render();
+      loading.classList.add("hide");
     });
   }
 }
@@ -125,6 +139,8 @@ function toggleStatus(e) {
 function deleteFinished(e) {
   const finished = data.filter((item) => item.status === "checked");
   if (finished < 1) return;
+
+  loading.classList.remove("hide");
 
   clearBtn.classList.add("no-event");
 
@@ -138,6 +154,7 @@ function deleteFinished(e) {
         const targetIndex = data.indexOf(targetItem);
         data.splice(targetIndex, 1);
         render();
+        clearBtn.classList.remove("no-event");
       })
       .catch((err) => {
         console.log(err);
