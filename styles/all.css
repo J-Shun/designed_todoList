@@ -467,12 +467,13 @@ input[type=checkbox]:checked ~ .content {
 }
 @media (max-width: 576px) {
   .loading::before {
-    color: #fff;
+    background-color: #fff;
   }
 }
 @media (max-width: 576px) {
   .loading {
-    background-color: #fff;
+    right: 32px;
+    color: #fff;
   }
 }
 

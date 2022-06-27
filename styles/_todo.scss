@@ -144,11 +144,12 @@ input[type="checkbox"]:checked {
     background-color: #ffd370;
     border-radius: 50%;
     @include phone {
-      color: #fff;
+      background-color: #fff;
     }
   }
   @include phone {
-    background-color: #fff;
+    right: 32px;
+    color: #fff;
   }
 }
 
