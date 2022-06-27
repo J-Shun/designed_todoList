@@ -37,7 +37,7 @@ function render() {
   let allContent = "";
   if (position === 1) {
     data.forEach((item) => {
-      allContent += `<li class="df aic position-relative" data-id=${item.id} ><label class="label df aic"><input type="checkbox" class="hide" ${item.status}/><span class="check-mark position-relative border-radius-sm cursor-pointer"></span><span class="content pl-3">${item.content}</span></label><img src="/image/x.svg" class="delete-icon ml-a cursor-pointer" /></li>`;
+      allContent += `<li class="df aic position-relative" data-id=${item.id} ><label class="label df aic"><input type="checkbox" class="hide" ${item.status}/><span class="check-mark position-relative border-radius-sm cursor-pointer"></span><span class="content pl-3">${item.content}</span></label><img src="./image/x.svg" class="delete-icon ml-a cursor-pointer" /></li>`;
     });
     list.innerHTML = allContent;
     quantity.textContent = `${
@@ -46,7 +46,7 @@ function render() {
   } else if (position === 2) {
     const yetItems = data.filter((item) => item.status === "");
     yetItems.forEach((item) => {
-      allContent += `<li class="df aic position-relative" data-id=${item.id} ><label class="label df aic"><input type="checkbox" class="hide" ${item.status}/><span class="check-mark position-relative border-radius-sm cursor-pointer"></span><span class="content pl-3">${item.content}</span></label><img src="/image/x.svg" class="delete-icon ml-a cursor-pointer" /></li>`;
+      allContent += `<li class="df aic position-relative" data-id=${item.id} ><label class="label df aic"><input type="checkbox" class="hide" ${item.status}/><span class="check-mark position-relative border-radius-sm cursor-pointer"></span><span class="content pl-3">${item.content}</span></label><img src="./image/x.svg" class="delete-icon ml-a cursor-pointer" /></li>`;
     });
     list.innerHTML = allContent;
     quantity.textContent = `${
@@ -55,7 +55,7 @@ function render() {
   } else {
     const doneItems = data.filter((item) => item.status === "checked");
     doneItems.forEach((item) => {
-      allContent += `<li class="df aic position-relative" data-id=${item.id} ><label class="label df aic"><input type="checkbox" class="hide" ${item.status}/><span class="check-mark position-relative border-radius-sm cursor-pointer"></span><span class="content pl-3">${item.content}</span></label><img src="/image/x.svg" class="delete-icon ml-a cursor-pointer" /></li>`;
+      allContent += `<li class="df aic position-relative" data-id=${item.id} ><label class="label df aic"><input type="checkbox" class="hide" ${item.status}/><span class="check-mark position-relative border-radius-sm cursor-pointer"></span><span class="content pl-3">${item.content}</span></label><img src="./image/x.svg" class="delete-icon ml-a cursor-pointer" /></li>`;
     });
     list.innerHTML = allContent;
     quantity.textContent = `${
