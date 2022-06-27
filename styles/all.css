@@ -440,4 +440,8 @@ input[type=checkbox]:checked ~ .content {
 }
 .check-mark:hover {
   border-color: #333;
+}
+
+.no-event {
+  pointer-events: none;
 }/*# sourceMappingURL=all.css.map */

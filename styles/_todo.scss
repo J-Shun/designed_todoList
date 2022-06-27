@@ -122,3 +122,7 @@ input[type="checkbox"]:checked {
     border-color: $primary-color;
   }
 }
+
+.no-event {
+  pointer-events: none;
+}
